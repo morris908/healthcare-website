@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderabad Neuro & ENT Clinic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Header 1 - Contact Info -->
+    <header class="header-top">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 40 2345 6789</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@hyderabadclinic.com</span>
+                </div>
+                <div class="contact-item emergency">
+                    <i class="fas fa-ambulance"></i>
+                    <span>Emergency: +91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header 2 - Logo & Navigation -->
+    <header class="header-main">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo-square">
+                    <div class="logo-content">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HNEC</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#doctors" class="nav-link">Doctors</a></li>
+                    <li><a href="#appointment" class="nav-link btn-appointment">Book an Appointment</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="tagline">Comprehensive Care for Your Brain & ENT Health</h1>
+                    <p class="hero-subtitle">Expert neurological and ENT care by experienced specialists in Hyderabad</p>
+                    <div class="hero-buttons">
+                        <a href="#appointment" class="btn btn-primary">Book Consultation</a>
+                        <a href="#services" class="btn btn-secondary">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-doctor"></i>
+                        <p>Medical Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <!-- Page 1: About Doctors -->
+    <section id="doctors" class="section doctors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Specialist Doctors</h2>
+                <p class="section-subtitle">Experienced professionals dedicated to your health</p>
+            </div>
+            
+            <div class="doctors-grid">
+                <!-- Doctor 1 - Neurosurgeon -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <div class="doctor-img-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Rajesh Kumar</h3>
+                        <p class="specialty">Neurosurgeon</p>
+                        <p class="qualification">MBBS, MS, MCh (Neurosurgery)</p>
+                        <p class="experience">15+ Years Experience</p>
+                        <div class="doctor-services">
+                            <h4>Specializations:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Headache Management</li>
+                                <li><i class="fas fa-check"></i> Spine Disorders</li>
+                                <li><i class="fas fa-check"></i> Neuropathy Treatment</li>
+                                <li><i class="fas fa-check"></i> Stroke Prevention</li>
+                                <li><i class="fas fa-check"></i> Epilepsy Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 - ENT Surgeon -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <div class="doctor-img-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Priya Kumar</h3>
+                        <p class="specialty">ENT Surgeon</p>
+                        <p class="qualification">MBBS, MS (ENT)</p>
+                        <p class="experience">12+ Years Experience</p>
+                        <div class="doctor-services">
+                            <h4>Specializations:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Hearing Disorders</li>
+                                <li><i class="fas fa-check"></i> Sinus Treatment</li>
+                                <li><i class="fas fa-check"></i> Throat Infections</li>
+                                <li><i class="fas fa-check"></i> Allergy Management</li>
+                                <li><i class="fas fa-check"></i> Voice Disorders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 3 - Neurologist -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <div class="doctor-img-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Anil Reddy</h3>
+                        <p class="specialty">Neurologist</p>
+                        <p class="qualification">MBBS, MD, DM (Neurology)</p>
+                        <p class="experience">18+ Years Experience</p>
+                        <div class="doctor-services">
+                            <h4>Specializations:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Parkinson's Disease</li>
+                                <li><i class="fas fa-check"></i> Migraine Treatment</li>
+                                <li><i class="fas fa-check"></i> Memory Disorders</li>
+                                <li><i class="fas fa-check"></i> Nerve Disorders</li>
+                                <li><i class="fas fa-check"></i> Sleep Disorders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 4 - ENT Specialist -->
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <div class="doctor-img-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Lakshmi Reddy</h3>
+                        <p class="specialty">ENT Specialist</p>
+                        <p class="qualification">MBBS, MS (ENT), DLO</p>
+                        <p class="experience">10+ Years Experience</p>
+                        <div class="doctor-services">
+                            <h4>Specializations:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Ear Infections</li>
+                                <li><i class="fas fa-check"></i> Nasal Polyps</li>
+                                <li><i class="fas fa-check"></i> Tonsillitis</li>
+                                <li><i class="fas fa-check"></i> Vertigo Treatment</li>
+                                <li><i class="fas fa-check"></i> Pediatric ENT</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services & Treatments</h2>
+                <p class="section-subtitle">Non-surgical specialized care for neurological and ENT conditions</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurological Consultations</h3>
+                    <p>Comprehensive evaluation and diagnosis of neurological conditions</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-head-side-virus"></i>
+                    </div>
+                    <h3>ENT Diagnostics</h3>
+                    <p>Advanced hearing tests, endoscopy, and ENT examinations</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Medication Management</h3>
+                    <p>Personalized treatment plans and medication optimization</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Health Screenings</h3>
+                    <p>Regular check-ups and preventive health assessments</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h3>Second Opinions</h3>
+                    <p>Expert second opinions for complex cases</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h3>Rehabilitation Therapy</h3>
+                    <p>Post-treatment recovery and therapy programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 2: Testimonials -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Patient Testimonials</h2>
+                <p class="section-subtitle">What our patients say about us</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Dr. Rajesh helped me manage my chronic migraines without any surgery. His non-invasive approach and detailed explanations gave me confidence in the treatment."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Suresh Patel</h4>
+                            <p>Patient since 2022</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Excellent ENT care from Dr. Priya. She diagnosed my sinus issue accurately and treated it with medications. No surgery needed. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Anita Sharma</h4>
+                            <p>Patient since 2021</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The team at this clinic is amazing. Dr. Anil's expertise in treating my father's Parkinson's has improved his quality of life significantly."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ramesh Kumar</h4>
+                            <p>Patient since 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Dr. Lakshmi treated my daughter's recurring ear infections with great care. Her gentle approach made my child comfortable during every visit."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Venkat Rao</h4>
+                            <p>Patient since 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: Address & Socials -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visit Us</h2>
+                <p class="section-subtitle">Get in touch with us</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3>Clinic Address</h3>
+                    <div class="address-details">
+                        <p><i class="fas fa-map-marker-alt"></i> HNEC Medical Center</p>
+                        <p>Banjara Hills, Road No. 12</p>
+                        <p>Hyderabad, Telangana 500034</p>
+                        <p>India</p>
+                    </div>
+                    
+                    <div class="contact-hours">
+                        <h4>Clinic Hours</h4>
+                        <p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
+                        <p><i class="fas fa-clock"></i> Sunday: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="map-section">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Interactive Map</p>
+                        <small>Hyderabad Location</small>
+                    </div>
+                </div>
+
+                <div class="social-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="quick-contact">
+                        <h4>Quick Contact</h4>
+                        <p><i class="fas fa-phone"></i> +91 40 2345 6789</p>
+                        <p><i class="fas fa-envelope"></i> info@hyderabadclinic.com</p>
+                        <p><i class="fas fa-ambulance"></i> Emergency: +91 98765 43210</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="section appointment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Book an Appointment</h2>
+                <p class="section-subtitle">Schedule your consultation today</p>
+            </div>
+            
+            <form class="appointment-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor</label>
+                        <select id="doctor" name="doctor" required>
+                            <option value="">Choose a doctor...</option>
+                            <option value="rajesh">Dr. Rajesh Kumar (Neurosurgeon)</option>
+                            <option value="priya">Dr. Priya Kumar (ENT Surgeon)</option>
+                            <option value="anil">Dr. Anil Reddy (Neurologist)</option>
+                            <option value="lakshmi">Dr. Lakshmi Reddy (ENT Specialist)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <select id="time" name="time" required>
+                            <option value="">Choose time...</option>
+                            <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                            <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                            <option value="evening">Evening (4:00 PM - 8:00 PM)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">Submit Appointment Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-square small">
+                        <div class="logo-content">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>HNEC</span>
+                        </div>
+                    </div>
+                    <p>Hyderabad Neuro & ENT Clinic</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 40 2345 6789</p>
+                    <p><i class="fas fa-envelope"></i> info@hyderabadclinic.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Banjara Hills, Hyderabad</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hyderabad Neuro & ENT Clinic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
