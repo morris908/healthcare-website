@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neuro-ENT Care Clinic | Hyderabad</title>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/lato/400.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/lato/700.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display/400.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display/700.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --teal: #0D9488;
+  --teal-dark: #134E4A;
+  --teal-deeper: #0A2F2C;
+  --gold: #D4A853;
+  --gold-light: #E8CC7A;
+  --white: #FFFFFF;
+  --bg-body: #FFFFFF;
+  --bg-header: #FFFFFF;
+  --bg-section-alt: #F7FAFA;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --text-heading: #0A2F2C;
+  --text-body: #6B7280;
+  --border-color: #E5E7EB;
+  --input-border: #E5E7EB;
+  --shadow: 0 10px 40px rgba(13,148,136,0.12);
+  --shadow-lg: 0 20px 60px rgba(13,148,136,0.18);
+  --modal-overlay: rgba(10,47,44,0.6);
+  --map-bg: linear-gradient(135deg, #E8F5F3 0%, #D1FAF5 100%);
+  --hero-bg: linear-gradient(135deg, var(--bg-section-alt) 0%, #E8F5F3 50%, #D1FAF5 100%);
+}
+
+[data-theme="dark"] {
+  --bg-body: #0B1120;
+  --bg-header: #111827;
+  --bg-section-alt: #0F172A;
+  --bg-card: #1E293B;
+  --bg-input: #1E293B;
+  --text-heading: #F1F5F9;
+  --text-body: #94A3B8;
+  --border-color: #334155;
+  --input-border: #334155;
+  --shadow: 0 10px 40px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+  --modal-overlay: rgba(0,0,0,0.8);
+  --map-bg: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  --hero-bg: linear-gradient(135deg, #0B1120 0%, #0F172A 50%, #111827 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--text-body);
+  overflow-x: hidden;
+  cursor: none;
+  background: var(--bg-body);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transition: all 0.15s ease-out;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  border-color: var(--gold);
+  background: rgba(13,148,136,0.08);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-section-alt); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--teal-dark); }
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: var(--teal-deeper);
+  color: var(--white);
+  padding: 10px 0;
+  font-size: 13px;
+  position: relative;
+  z-index: 100;
+}
+
+.top-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.top-bar-item:hover {
+  color: var(--gold);
+}
+
+.top-bar-item i {
+  color: var(--gold);
+  font-size: 14px;
+}
+
+.emergency-badge {
+  background: #DC2626;
+  color: white;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  animation: pulse-emergency 2s infinite;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@keyframes pulse-emergency {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(220,38,38,0); }
+}
+
+/* ===== HEADER / NAV ===== */
+.main-header {
+  background: var(--bg-header);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  transition: all 0.3s ease, background-color 0.4s;
+}
+
+.main-header.scrolled {
+  padding: 8px 0;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.logo-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: rgba(86, 224, 219, 0.806);
+  line-height: 1.1;
+  transition: color 0.4s;
+}
+
+.logo-text span {
+  font-size: 11px;
+  color: var(--text-body);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.4s;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-heading);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 30px;
+}
+
+.nav-links a:hover {
+  color: var(--teal);
+}
+
+.nav-links .btn-appointment {
+  background: var(--teal);
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(13,148,136,0.3);
+}
+
+.nav-links .btn-appointment::after {
+  display: none;
+}
+
+.nav-links .btn-appointment:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(13,148,136,0.4);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-heading);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  transform: rotate(15deg);
+}
+
+.theme-toggle i {
+  position: absolute;
+  transition: all 0.4s ease;
+}
+
+.theme-toggle .fa-moon { opacity: 1; transform: translateY(0); }
+.theme-toggle .fa-sun { opacity: 0; transform: translateY(20px); }
+
+[data-theme="dark"] .theme-toggle .fa-moon { opacity: 0; transform: translateY(-20px); }
+[data-theme="dark"] .theme-toggle .fa-sun { opacity: 1; transform: translateY(0); }
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--text-heading);
+  cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--hero-bg);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212,168,83,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  animation: fadeInLeft 1s ease;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13,148,136,0.1);
+  color: var(--teal);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-tag i {
+  color: var(--gold);
+}
+
+.hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  line-height: 1.15;
+  color: var(--text-heading);
+  margin-bottom: 20px;
+  transition: color 0.4s;
+}
+
+.hero-content h2 span {
+  color: var(--gold);
+  position: relative;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 480px;
+  transition: color 0.4s;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 25px rgba(13,148,136,0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--teal-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(13,148,136,0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-heading);
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--teal);
+}
+
+.btn-secondary:hover {
+  background: var(--teal);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-body);
+  margin-top: 4px;
+  transition: color 0.4s;
+}
+
+.hero-image {
+  position: relative;
+  animation: fadeInRight 1s ease 0.3s both;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-float-card {
+  position: absolute;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: float 3s ease-in-out infinite;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-float-card.card-1 {
+  top: 20px;
+  right: -20px;
+}
+
+.hero-float-card.card-2 {
+  bottom: 40px;
+  left: -20px;
+  animation-delay: 1.5s;
+}
+
+.float-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.float-icon.teal { background: rgba(13,148,136,0.1); color: var(--teal); }
+.float-icon.gold { background: rgba(212,168,83,0.15); color: var(--gold); }
+
+.float-text strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text-heading);
+  transition: color 0.4s;
+}
+
+.float-text span {
+  font-size: 12px;
+  color: var(--text-body);
+  transition: color 0.4s;
+}
+
+/* ===== SECTION STYLES ===== */
+section {
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header .overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-header .overline::before,
+.section-header .overline::after {
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+  transition: color 0.4s;
+}
+
+.section-header p {
+  font-size: 17px;
+  color: var(--text-body);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  transition: color 0.4s;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* ===== SERVICES ===== */
+.services-section {
+  background: var(--bg-section-alt);
+  transition: background 0.4s;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(13,148,136,0.2);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  transition: all 0.3s;
+}
+
+.service-icon.teal-bg { background: rgba(13,148,136,0.1); color: var(--teal); }
+.service-icon.gold-bg { background: rgba(212,168,83,0.12); color: var(--gold); }
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  transition: color 0.4s;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.7;
+  transition: color 0.4s;
+}
+
+.service-card .learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: gap 0.3s;
+}
+
+.service-card .learn-more:hover {
+  gap: 12px;
+}
+
+/* ===== ABOUT DOCTORS ===== */
+.doctors-section {
+  background: var(--bg-body);
+  transition: background 0.4s;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.doctor-card {
+  background: var(--bg-section-alt);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.doctor-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-img-wrapper img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.doctor-card:hover .doctor-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.doctor-specialty-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(13,148,136,0.95);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.doctor-info {
+  padding: 30px;
+}
+
+.doctor-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+  transition: color 0.4s;
+}
+
+.doctor-info .credentials {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.doctor-info p {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  transition: color 0.4s;
+}
+
+.doctor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doctor-tags span {
+  background: rgba(13,148,136,0.08);
+  color: var(--teal);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.4s;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-section {
+  background: linear-gradient(135deg, var(--teal-deeper) 0%, var(--teal-dark) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.testimonials-section .section-header .overline {
+  color: var(--gold-light);
+}
+
+.testimonials-section .section-header .overline::before,
+.testimonials-section .section-header .overline::after {
+  background: rgba(212,168,83,0.5);
+}
+
+.testimonials-section .section-header h2 {
+  color: white;
+}
+
+.testimonials-section .section-header p {
+  color: rgba(255,255,255,0.7);
+}
+
+.testimonials-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+  min-width: 100%;
+  padding: 0 20px;
+}
+
+.testimonial-inner {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-inner::before {
+  content: '\201C';
+  font-family: 'Playfair Display', serif;
+  font-size: 120px;
+  color: rgba(212,168,83,0.2);
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  line-height: 1;
+}
+
+.testimonial-inner p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 30px;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-author-info strong {
+  display: block;
+  font-size: 16px;
+  color: white;
+}
+
+.testimonial-author-info span {
+  font-size: 13px;
+  color: var(--gold-light);
+}
+
+.testimonial-stars {
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.slider-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  transform: scale(1.1);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-dot.active {
+  background: var(--gold);
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* ===== ADDRESS & SOCIALS ===== */
+.contact-section {
+  background: var(--bg-section-alt);
+  transition: background 0.4s;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: all 0.4s;
+}
+
+.contact-info-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--text-heading);
+  margin-bottom: 30px;
+  transition: color 0.4s;
+}
+
+.contact-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.contact-item-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: rgba(13,148,136,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.contact-item-text strong {
+  display: block;
+  color: var(--text-heading);
+  font-size: 15px;
+  margin-bottom: 4px;
+  transition: color 0.4s;
+}
+
+.contact-item-text span,
+.contact-item-text a {
+  color: var(--text-body);
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.6;
+  transition: color 0.4s;
+}
+
+.contact-item-text a:hover {
+  color: var(--teal);
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+}
+
+.social-link.facebook { background: #1877F2; }
+.social-link.instagram { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); }
+.social-link.twitter { background: #1DA1F2; }
+.social-link.youtube { background: #FF0000; }
+.social-link.whatsapp { background: #25D366; }
+.social-link.linkedin { background: #0A66C2; }
+
+.map-card {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+  min-height: 500px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all 0.4s;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  background: var(--map-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transition: background 0.4s;
+}
+
+.map-placeholder i {
+  font-size: 60px;
+  color: var(--teal);
+  opacity: 0.5;
+}
+
+.map-placeholder p {
+  color: var(--text-body);
+  font-size: 16px;
+}
+
+.map-placeholder .clinic-address {
+  background: var(--bg-card);
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  margin-top: 10px;
+  transition: background 0.4s;
+}
+
+.map-placeholder .clinic-address h4 {
+  color: var(--text-heading);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+  transition: color 0.4s;
+}
+
+.map-placeholder .clinic-address p {
+  font-size: 14px;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* ===== BOOK APPOINTMENT MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: 50px;
+  max-width: 560px;
+  width: 90%;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-section-alt);
+  color: var(--text-body);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.modal h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+  transition: color 0.4s;
+}
+
+.modal > p {
+  color: var(--text-body);
+  margin-bottom: 30px;
+  font-size: 15px;
+  transition: color 0.4s;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  transition: color 0.4s;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid var(--input-border);
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  transition: all 0.3s;
+  outline: none;
+  color: var(--text-heading);
+  background: var(--bg-input);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--teal);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-submit:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(13,148,136,0.3);
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.form-success i {
+  font-size: 60px;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.form-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.form-success p {
+  color: var(--text-body);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--teal-deeper);
+  color: rgba(255,255,255,0.8);
+  padding: 60px 0 30px;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-col h4 {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 0;
+  transition: all 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--gold-light);
+  padding-left: 6px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(13,148,136,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--teal-dark);
+  transform: translateY(-4px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-content p { margin: 0 auto 36px; }
+  .hero-buttons { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-image { max-width: 500px; margin: 0 auto; }
+  .hero-float-card { display: none; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .doctors-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-ring { display: none; }
+  html, body { cursor: auto; }
+  .top-bar-inner { justify-content: center; text-align: center; }
+  .nav-links { 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-header);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    gap: 4px;
+  }
+  .nav-links.active { display: flex; }
+  .nav-links a { width: 100%; text-align: center; }
+  .mobile-toggle { display: block; }
+  .theme-toggle { margin-left: 0; }
+  .header-inner { gap: 10px; }
+  .hero-content h2 { font-size: 36px; }
+  .section-header h2 { font-size: 32px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .modal { padding: 30px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 { font-size: 28px; }
+  .hero-stats { gap: 20px; }
+  .stat-number { font-size: 28px; }
+  .testimonial-inner { padding: 30px 20px; }
+}
+</style>
+</head>
+<body data-theme="light">
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <a href="tel:+919876543210" class="top-bar-item">
+      <i class="fas fa-phone-alt"></i>
+      <span>+91 98765 43210</span>
+    </a>
+    <a href="mailto:info@neuroentcare.com" class="top-bar-item">
+      <i class="fas fa-envelope"></i>
+      <span>info@neuroentcare.com</span>
+    </a>
+    <a href="tel:+917033112233" class="emergency-badge">
+      <i class="fas fa-ambulance"></i>
+      <span>Emergency: +91 70331 12233</span>
+    </a>
+  </div>
+</div>
+
+<!-- Main Header -->
+<header class="main-header" id="mainHeader">
+  <div class="header-inner">
+    <a href="#" class="logo-area">
+      <img src="https://image.qwenlm.ai/public_source/ce9e94cc-c660-47cb-9394-ea74d6e154e8/1f0b35bf0-df0b-47b0-9424-3130f86bd59b.png" alt="Neuro-ENT Care Clinic" class="logo-img">
+      <div class="logo-text">
+        <h1>Neuro-ENT Care</h1>
+        <span>Specialty Clinic</span>
+      </div>
+    </a>
+    <div style="display:flex; align-items:center;">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">About Us</a></li>
+        <li><a href="#" class="btn-appointment" id="bookBtn">Book an Appointment</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <i class="fas fa-heartbeat"></i>
+        Trusted Medical Care in Hyderabad
+      </div>
+      <h2>Expert <span>Neurological</span> & <span>ENT</span> Care Under One Roof</h2>
+      <p>Experience world-class non-surgical neurological and ENT treatments with our dedicated team of specialist doctors, right here in the heart of Hyderabad.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary" id="bookBtn2">
+          <i class="fas fa-calendar-check"></i>
+          Book Appointment
+        </a>
+        <a href="#services" class="btn-secondary">
+          <i class="fas fa-stethoscope"></i>
+          Our Services
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">10K+</div>
+          <div class="stat-label">Patients Treated</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.9</div>
+          <div class="stat-label">Patient Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://image.qwenlm.ai/public_source/ce9e94cc-c660-47cb-9394-ea74d6e154e8/1a7827223-4991-4936-a0f1-e44648cc873c.png" alt="Clinic Interior">
+      <div class="hero-float-card card-1">
+        <div class="float-icon teal"><i class="fas fa-brain"></i></div>
+        <div class="float-text">
+          <strong>Neurology Dept</strong>
+          <span>Non-invasive care</span>
+        </div>
+      </div>
+      <div class="hero-float-card card-2">
+        <div class="float-icon gold"><i class="fas fa-ear-listen"></i></div>
+        <div class="float-text">
+          <strong>ENT Dept</strong>
+          <span>Advanced diagnostics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="overline">What We Offer</div>
+      <h2>Our Services & Treatments</h2>
+      <p>Comprehensive non-surgical care for neurological and ENT conditions, using the latest diagnostic and therapeutic approaches.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon teal-bg"><i class="fas fa-brain"></i></div>
+        <h3>Neurological Consultation</h3>
+        <p>Expert evaluation and diagnosis of headaches, migraines, neuropathy, dizziness, and other neurological disorders.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon gold-bg"><i class="fas fa-ear-listen"></i></div>
+        <h3>ENT Evaluation</h3>
+        <p>Complete ear, nose, and throat assessments including hearing tests, balance evaluation, and sinus examinations.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon teal-bg"><i class="fas fa-wave-square"></i></div>
+        <h3>EEG & Nerve Studies</h3>
+        <p>Advanced electroencephalogram and nerve conduction studies for accurate diagnosis of neurological conditions.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon gold-bg"><i class="fas fa-allergies"></i></div>
+        <h3>Allergy & Sinus Management</h3>
+        <p>Non-surgical management of allergic rhinitis, chronic sinusitis, nasal polyps, and respiratory allergies.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon teal-bg"><i class="fas fa-head-side-virus"></i></div>
+        <h3>Headache & Migraine Clinic</h3>
+        <p>Specialized headache clinic offering preventive and abortive treatment plans for chronic migraine sufferers.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon gold-bg"><i class="fas fa-volume-high"></i></div>
+        <h3>Voice & Speech Therapy</h3>
+        <p>Voice disorder assessment, laryngoscopy, and therapeutic interventions for hoarseness and speech difficulties.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon teal-bg"><i class="fas fa-bed-pulse"></i></div>
+        <h3>Sleep Disorder Evaluation</h3>
+        <p>Diagnosis and non-invasive management of sleep apnea, insomnia, and other sleep-related neurological issues.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon gold-bg"><i class="fas fa-hand-holding-medical"></i></div>
+        <h3>Audiometry & Hearing Care</h3>
+        <p>Comprehensive hearing assessments, hearing aid fittings, and tinnitus management for all age groups.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon teal-bg"><i class="fas fa-child"></i></div>
+        <h3>Pediatric Neuro & ENT</h3>
+        <p>Specialized non-surgical care for children including developmental delays, speech issues, and ear infections.</p>
+        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Doctors Section -->
+<section class="doctors-section" id="doctors">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="overline">Meet Our Specialists</div>
+      <h2>About Our Doctors</h2>
+      <p>A dedicated husband-wife team bringing together expertise in neurology and ENT care to serve the Hyderabad community.</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doctor-card reveal reveal-delay-1">
+        <div class="doctor-img-wrapper">
+          <img src="https://image.qwenlm.ai/public_source/ce9e94cc-c660-47cb-9394-ea74d6e154e8/1f61df512-c401-47be-823a-7d8b9e29ce7e.png" alt="Dr. Arjun Reddy">
+          <div class="doctor-specialty-badge">Neurosurgeon</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Arjun Reddy</h3>
+          <div class="credentials">M.Ch (Neurosurgery), MS, MBBS</div>
+          <p>With over 15 years of experience in neurosurgical care, Dr. Arjun specializes in non-invasive neurological treatments, brain tumor management, and complex spine consultations. He is dedicated to providing compassionate care for all neurological conditions.</p>
+          <div class="doctor-tags">
+            <span>Brain Disorders</span>
+            <span>Spine Care</span>
+            <span>Nerve Studies</span>
+            <span>Headache Clinic</span>
+          </div>
+        </div>
+      </div>
+      <div class="doctor-card reveal reveal-delay-2">
+        <div class="doctor-img-wrapper">
+          <img src="https://image.qwenlm.ai/public_source/ce9e94cc-c660-47cb-9394-ea74d6e154e8/1d925cfd5-cb4a-44bd-a072-7598db391876.png" alt="Dr. Priya Reddy">
+          <div class="doctor-specialty-badge">ENT Surgeon</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Priya Reddy</h3>
+          <div class="credentials">MS (ENT), DLO, MBBS</div>
+          <p>Dr. Priya brings 12+ years of expertise in ear, nose, and throat care. Her focus includes allergy management, hearing rehabilitation, voice disorders, and pediatric ENT. She is known for her patient-centered approach and thorough diagnostic methods.</p>
+          <div class="doctor-tags">
+            <span>Hearing Care</span>
+            <span>Allergy Treatment</span>
+            <span>Voice Therapy</span>
+            <span>Sinus Care</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Couple Image -->
+    <div style="margin-top:60px; text-align:center;" class="reveal">
+      <img src="https://image.qwenlm.ai/public_source/ce9e94cc-c660-47cb-9394-ea74d6e154e8/1f0f6a4df-2b5d-4adf-9fd9-bfb758f92f02.png" alt="Dr. Arjun & Dr. Priya Reddy" style="max-width:700px; width:100%; border-radius:20px; box-shadow: var(--shadow-lg);">
+      <p style="margin-top:16px; color:var(--text-body); font-style:italic; font-size:16px;">Dr. Arjun Reddy & Dr. Priya Reddy — Partners in Healthcare & in Life</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="overline">Patient Stories</div>
+      <h2>What Our Patients Say</h2>
+      <p>Real experiences from patients who have trusted us with their health and well-being.</p>
+    </div>
+    <div class="testimonials-slider reveal">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"I had been suffering from chronic migraines for over 5 years. Dr. Arjun's approach was thorough and compassionate. He prescribed a treatment plan that finally gave me relief. The entire team at the clinic is wonderful and caring."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RK</div>
+              <div class="testimonial-author-info">
+                <strong>Rajesh Kumar</strong>
+                <span>Migraine Patient, Banjara Hills</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"My daughter had recurring ear infections and hearing issues. Dr. Priya was incredibly patient with her and explained everything clearly. After the treatment, my daughter's hearing improved significantly. We are forever grateful!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SM</div>
+              <div class="testimonial-author-info">
+                <strong>Sneha Menon</strong>
+                <span>Parent, HITEC City</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"Having both neurology and ENT services under one roof is a blessing. I visited Dr. Priya for a sinus issue and Dr. Arjun for a nerve-related concern. Both doctors are highly professional and the coordination between them is excellent."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">VA</div>
+              <div class="testimonial-author-info">
+                <strong>Venkat Aditya</strong>
+                <span>Combined Treatment, Gachibowli</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"The clinic's ambiance is so calming and the staff is incredibly friendly. Dr. Arjun diagnosed my vertigo correctly when two other doctors had missed it. His expertise made all the difference. Highly recommended!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">LP</div>
+              <div class="testimonial-author-info">
+                <strong>Lakshmi Priya</strong>
+                <span>Vertigo Patient, Jubilee Hills</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" id="prevSlide" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn" id="nextSlide" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Address & Socials Section -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="overline">Get In Touch</div>
+      <h2>Visit Our Clinic</h2>
+      <p>We're conveniently located in the heart of Hyderabad. Reach out to us or visit our clinic for expert medical care.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info-card reveal reveal-delay-1">
+        <h3>Contact Information</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-item-text">
+            <strong>Clinic Address</strong>
+            <span>Plot No. 42, Road No. 10, Banjara Hills,<br>Hyderabad, Telangana 500034</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="contact-item-text">
+            <strong>Phone Numbers</strong>
+            <a href="tel:+919876543210">+91 98765 43210</a><br>
+            <a href="tel:+917033112233">+91 70331 12233 (Emergency)</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <a href="mailto:info@neuroentcare.com">info@neuroentcare.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-item-text">
+            <strong>Clinic Hours</strong>
+            <span>Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: 10:00 AM – 2:00 PM (By Appointment)</span>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="map-card reveal reveal-delay-2">
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <p>Our Location in Banjara Hills, Hyderabad</p>
+          <div class="clinic-address">
+            <h4>Neuro-ENT Care Clinic</h4>
+            <p>Plot No. 42, Road No. 10, Banjara Hills<br>Hyderabad, Telangana 500034</p>
+          </div>
+          <a href="https://maps.google.com/?q=Banjara+Hills+Hyderabad" target="_blank" class="btn-primary" style="margin-top:10px; font-size:14px; padding:12px 28px;">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Neuro-ENT Care Clinic</h3>
+        <p>Providing expert neurological and ENT care in Hyderabad. Our husband-wife team of specialists is committed to your health and well-being.</p>
+        <div class="social-links">
+          <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#services">Our Services</a>
+        <a href="#doctors">Meet the Doctors</a>
+        <a href="#testimonials">Patient Stories</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Neurology</h4>
+        <a href="#">Neurological Consultation</a>
+        <a href="#">EEG & Nerve Studies</a>
+        <a href="#">Headache Clinic</a>
+        <a href="#">Sleep Disorder Eval</a>
+      </div>
+      <div class="footer-col">
+        <h4>ENT Care</h4>
+        <a href="#">ENT Evaluation</a>
+        <a href="#">Allergy & Sinus</a>
+        <a href="#">Voice Therapy</a>
+        <a href="#">Hearing Care</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Neuro-ENT Care Clinic. All Rights Reserved.</span>
+      <span>Designed with <i class="fas fa-heart" style="color:#DC2626;"></i> for Better Health</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Book Appointment Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div id="appointmentForm">
+      <h2>Book an Appointment</h2>
+      <p>Fill in your details and we'll get back to you shortly to confirm your appointment.</p>
+      <form id="bookingForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" placeholder="Enter first name" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" placeholder="Enter last name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="doctor">Select Doctor *</label>
+          <select id="doctor" required>
+            <option value="">Choose a doctor...</option>
+            <option value="dr-arjun">Dr. Arjun Reddy — Neurology</option>
+            <option value="dr-priya">Dr. Priya Reddy — ENT</option>
+            <option value="both">Both Doctors (Combined Consultation)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Preferred Date *</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Preferred Time *</label>
+            <select id="time" required>
+              <option value="">Select time...</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="18:00">6:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Describe Your Condition</label>
+          <textarea id="message" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          <i class="fas fa-calendar-check"></i> Confirm Appointment
+        </button>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <i class="fas fa-check-circle"></i>
+      <h3>Appointment Requested!</h3>
+      <p>Thank you! We'll contact you within 24 hours to confirm your appointment.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('themeToggle');
+const htmlEl = document.body;
+
+// Check saved theme or system preference
+const savedTheme = localStorage.getItem('clinicTheme');
+if (savedTheme) {
+  htmlEl.setAttribute('data-theme', savedTheme);
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  htmlEl.setAttribute('data-theme', 'dark');
+}
+
+themeToggleBtn.addEventListener('click', () => {
+  const current = htmlEl.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  htmlEl.setAttribute('data-theme', next);
+  localStorage.setItem('clinicTheme', next);
+});
+
+// Custom Cursor
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  dot.style.left = mouseX - 4 + 'px';
+  dot.style.top = mouseY - 4 + 'px';
+});
+
+function animateRing() {
+  ringX += (mouseX - ringX) * 0.15;
+  ringY += (mouseY - ringY) * 0.15;
+  ring.style.left = ringX + 'px';
+  ring.style.top = ringY + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+// Cursor hover effects
+const hoverElements = document.querySelectorAll('a, button, .service-card, .doctor-card, input, select, textarea');
+hoverElements.forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+});
+
+// Header scroll effect
+const header = document.getElementById('mainHeader');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Mobile toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  const icon = mobileToggle.querySelector('i');
+  icon.classList.toggle('fa-bars');
+  icon.classList.toggle('fa-times');
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    const icon = mobileToggle.querySelector('i');
+    icon.classList.add('fa-bars');
+    icon.classList.remove('fa-times');
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Testimonials Slider
+const track = document.getElementById('testimonialsTrack');
+const slides = track.querySelectorAll('.testimonial-card');
+const dotsContainer = document.getElementById('sliderDots');
+let currentSlide = 0;
+let autoSlideInterval;
+
+// Create dots
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.classList.add('slider-dot');
+  if (i === 0) d.classList.add('active');
+  d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+  d.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(d);
+});
+
+function goToSlide(index) {
+  currentSlide = index;
+  track.style.transform = 'translateX(-' + (index * 100) + '%)';
+  document.querySelectorAll('.slider-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+}
+
+document.getElementById('prevSlide').addEventListener('click', () => {
+  const next = (currentSlide - 1 + slides.length) % slides.length;
+  goToSlide(next);
+  resetAutoSlide();
+});
+
+document.getElementById('nextSlide').addEventListener('click', () => {
+  const next = (currentSlide + 1) % slides.length;
+  goToSlide(next);
+  resetAutoSlide();
+});
+
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(() => {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, 5000);
+}
+resetAutoSlide();
+
+// Appointment Modal
+const modalOverlay = document.getElementById('modalOverlay');
+const bookingForm = document.getElementById('bookingForm');
+const appointmentFormDiv = document.getElementById('appointmentForm');
+const formSuccess = document.getElementById('formSuccess');
+
+function openModal() {
+  modalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modalOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+  // Reset form after close
+  setTimeout(() => {
+    appointmentFormDiv.style.display = '';
+    formSuccess.style.display = 'none';
+    bookingForm.reset();
+  }, 300);
+}
+
+document.getElementById('bookBtn').addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+document.getElementById('bookBtn2').addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+
+bookingForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  appointmentFormDiv.style.display = 'none';
+  formSuccess.style.display = 'block';
+});
+
+// Set min date to today
+const dateInput = document.getElementById('date');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
+
+// Back to top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    if (window.scrollY >= top) {
+      current = section.getAttribute('id');
+    }
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
+
